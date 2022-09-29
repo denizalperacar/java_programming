@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/coursera/coursera.iml" filepath="$PROJECT_DIR$/coursera/coursera.iml" />
-      <module fileurl="file://$PROJECT_DIR$/java_programming/java_programming.iml" filepath="$PROJECT_DIR$/java_programming/java_programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java_programming.iml" filepath="$PROJECT_DIR$/java_programming.iml" />
     </modules>
   </component>
 </project>

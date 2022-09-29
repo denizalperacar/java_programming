@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/coursera/cs_prinston/lib/stdlib.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/coursera/cs_prinston/lib/stdlib.jar!/" />
+    </SOURCES>
   </library>
 </component>

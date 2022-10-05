@@ -5,7 +5,10 @@ public class Divisors {
         int d;
         a = Math.abs(a);
         b = Math.abs(b);
-        if (a == 0 || b == 0) return 0;
+
+        if (a == 0) return Math.abs(b);
+        if (b == 0) return Math.abs(a);
+
         while (a % b != 0) {
             d = b;
             b = Math.abs(a % b);
@@ -30,7 +33,7 @@ public class Divisors {
     // relatively prime with n.
     public static int totient(int n) {
         int num = 0;
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n+1; i++) {
             if (areRelativelyPrime(i, n)) num += 1;
         }
         
@@ -42,7 +45,7 @@ public class Divisors {
     public static void main(String[] args) {
         int a = Integer.parseInt(args[0]);
         int b = Integer.parseInt(args[1]);
-        StdOut.println("gcs(" + a + ", " + b + ") = " + gcd(a, b));
+        StdOut.println("gcd(" + a + ", " + b + ") = " + gcd(a, b));
         StdOut.println("lcm(" + a + ", " + b + ") = " + lcm(a, b));
         StdOut.println("areRelativelyPrime(" + a + ", " + b + ") = " + areRelativelyPrime(a, b));
         StdOut.println("totient(" + a + ") = " + totient(a));

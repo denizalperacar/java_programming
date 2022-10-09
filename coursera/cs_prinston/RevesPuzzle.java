@@ -7,7 +7,6 @@ public class RevesPuzzle {
     // with A representing the starting pole and D representing the destination pole
 
     public static String move(int h, int l, String from, String mid, String to) {
-
         if (h < l) return "";
         String output = "";
         output += move(h - 1, l, from, to, mid);
@@ -15,13 +14,20 @@ public class RevesPuzzle {
         output += move(h - 1, l, mid, from, to);
         return output;
     }
-    public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]);
+    public static String reve(int n, String from, String to, String mid1, String mid2) {
+
+        if (n < 1) return "";
         int k = (int) Math.round(n + 1 - Math.sqrt(2 * n + 1));
         String output = "";
-        output += move(k, 1, "A", "C", "B");
-        output += move(n, n - k + 1, "A", "C", "D");
-        output += move(k, 1, "B", "C", "D");
+        output += reve(k, from, mid1, to, mid2);
+        output += move(n , k + 1, from, mid2, to);
+        output += reve(k, mid1, to, from, mid2);
+        return output;
+    }
+    public static void main(String[] args) {
+        int n = Integer.parseInt(args[0]);
+        String output = "";
+        output += reve(n, "A", "D", "B", "C");
         StdOut.print(output);
     }   
 }

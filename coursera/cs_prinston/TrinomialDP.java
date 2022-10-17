@@ -2,9 +2,18 @@ public class TrinomialDP {
     
     // Returns the trinomial coefficients T(n, k)
     public static long trinomial(int n, int k) {
-
+        // add the base cases
+        if (n == 0 && k == 0) {
+            return 1;
+        }
+        else if (k < -n || k > n) {
+            return 0;
+        }
+        
         long[] coef = new long[2 * n + 3];
-        coef[1] = 1; coef[2] = 1; coef[3] = 1;
+        coef[1] = 1; 
+        coef[2] = 1; 
+        coef[3] = 1;
 
         for (int i = 2; i <= n; i++) {
             long[] temp = new long[2 * i + 3];

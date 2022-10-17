@@ -12,7 +12,7 @@ public class RecursiveSquares {
     // Draws a recursive square pattern of order n, centered on (x, y)
     // of the given side length.
     public static void draw(int n, double x, double y, double length) {
-        if (n > 0 ) {
+        if (n > 0) {
             draw(n - 1, x - length / 2., y + length / 2., length / 2.);
             draw(n - 1, x + length / 2., y + length / 2., length / 2.);
             drawSquare(x, y, length);

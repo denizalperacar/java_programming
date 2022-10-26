@@ -3,6 +3,29 @@ public class Inversions {
     // Return the number of inversions in the permutation a[].
     public static long count(int[] a) {
         long inversions = 0;
+        int[] arr = new int[a.length];
+
+        for (int i = 0; i < a.length; i++) {
+            arr[i] = a[i]; 
+        }
+        
+        int start = 1;
+        int j;
+        int temp;
+
+        while (start < a.length) {
+            j = start;
+            if (arr[start-1] < arr[start]) start ++;
+            while ((j < arr.length) && arr[j - 1] > arr[j] ) {
+                inversions++;
+                // flip
+                temp = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = temp;
+                // increment carrier index
+                j++;
+            }
+        }
         return inversions;
     }
 
@@ -39,12 +62,9 @@ public class Inversions {
 
         int n = Integer.parseInt(args[0]);
         long k = Long.parseLong(args[1]);
-
         int[] permutation = generate(n, k);
-
         for (int i = 0; i < n; i++) {
             StdOut.print(permutation[i] + " ");
         }
     }
-
 }
